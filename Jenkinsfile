@@ -51,11 +51,11 @@ pipeline {
 
     }
     stages {
-        stage('Clone') {
-            steps {              
-                sh "git branch: 'main', credentialsId: 'github-jenkins-token', url: 'https://github.com/vilanova-desenvolvimento/laravel-cicd-indian-version'" 
+        stage('Cloning Git') {
+            steps {
+              git([ url: 'https://github.com/vilanova-desenvolvimento/laravel-cicd-indian-version', branch: 'main', credentialsId: 'github-jenkins-token'])
             }
-        }
+        }    
         stage('Build') {
             steps {              
                 sh 'docker compose up -d' 
