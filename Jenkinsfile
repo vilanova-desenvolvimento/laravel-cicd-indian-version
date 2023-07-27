@@ -50,15 +50,10 @@ pipeline {
         VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
     }
-    stages {
-        stage('Cloning Git') {
-            steps {
-              git([ url: 'https://github.com/vilanova-desenvolvimento/laravel-cicd-indian-version', branch: 'main', credentialsId: 'github-jenkins-token'])
-            }
-        }    
+    stages {           
         stage('Build') {
             steps {              
-                sh 'make start' 
+                sh 'make start-prod' 
             }
         }
     }
