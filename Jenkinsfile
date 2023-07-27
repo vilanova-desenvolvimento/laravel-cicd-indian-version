@@ -25,7 +25,7 @@ pipeline {
         SESSION_DRIVER="file"
         SESSION_LIFETIME=120
 
-        MEMCACHED_HOST=127.0.0.1
+        MEMCACHED_HOST="127.0.0.1"
 
         REDIS_HOST="redis"
         REDIS_PASSWORD="secret"
