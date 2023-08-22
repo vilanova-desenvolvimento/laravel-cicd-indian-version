@@ -50,10 +50,10 @@ pipeline {
         VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
     }
-    stages {           
+    stages {        
         stage('Build') {
             steps {              
-                sh 'make start-prod' 
+                sh 'docker compose up -d --build' 
             }
         }
     }
